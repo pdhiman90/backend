@@ -1,5 +1,45 @@
-import mongoose from "mongoose";
-import { DB_NAME } from "./constants";
+// require('dotenv').config({path:'./env'});
+
+import dotenv from 'dotenv';
+import connectDB from "./db/index.js";
+
+dotenv.config({
+    path: './env'
+})
+
+// Approach 2 professional 
+
+connectDB();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Approach 1 basic
 import express from "express";
 
 const app=express();
@@ -20,3 +60,4 @@ const app=express();
         throw error;
     }
 })()
+    */
