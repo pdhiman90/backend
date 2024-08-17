@@ -9,7 +9,20 @@ dotenv.config({
 
 // Approach 2 professional 
 
-connectDB();
+connectDB()
+.then(()=>{
+    const port = process.env.PORT||8000;
+    app.on((error)=>{
+        console.log("server connection failed : ",error);
+        throw error;
+    }); 
+    app.listen(port,()=>{
+        console.log(`Server is listening on PORT :${port}`)
+    });
+})
+.catch((error)=>{
+    console.log("mongodb connection failed !!!",error);
+})
 
 
 
