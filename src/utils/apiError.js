@@ -11,15 +11,13 @@ class apiError extends Error{
         this.message=message
         this.success=false;
         this.errors=errors;
+        if(statck){
+            this.stack=statck;
+        }
+        {
+        Error.captureStackTrace(this,this.constructor)
+       }
     }
-
-
-//     if(statck){
-//         this.stack=statck;
-//     }
-//     {
-//     Error.captureStackTrace(this,this.constructor)
-//    }
 }
 
 export {apiError}
